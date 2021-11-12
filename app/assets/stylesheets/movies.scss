@@ -2,10 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body {
-  background-color: #5c7cfa;
-  overflow-x: hidden;
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+body {
+  background-color: #000;
+  color: #5c7cfa;
+}
+
 
 .container-center {
   position: relative;
@@ -14,28 +23,29 @@ body {
 }
 
 .container-movies {
-  width: 1200px;
-  margin: 10px 2px;
   position: relative;
 }
 
-#pinned-button-index {
-    position: absolute;
-    top: 20px;
-    right: 200px;
+#pinned-button-show {
+  position: absolute;
+  top: 30px;
+  right: 30px;
 }
 
-#pinned-button-show {
-    position: absolute;
-    top: 30px;
-    right: 30px;
+#pinned-button-index {
+  position: absolute;
+  top: 10px;
+  right: 4xpx;
 }
+
 
 ul {
-  list-style-type: none;
-  a {
-    display: block;
-  }
+  list-style: none;
+}
+
+
+.grid-container {
+  margin: 0 100px;
 }
 
 .grid {
@@ -50,4 +60,19 @@ ul {
   img:hover {
     transform: scale(1.4);
   }
+}
+
+.grid-titles {
+  position: relative;
+  width: 100%;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 325px;
+  height: 100%;
+  padding: 20px 0;
+  transition: all 0.5s ease;
 }
