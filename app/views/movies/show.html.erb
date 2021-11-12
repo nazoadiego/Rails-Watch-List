@@ -1,0 +1,16 @@
+<div class="container-center">
+  <div>
+    <%= link_to 'Movie Index', movies_path %>
+  </div>
+
+  <%= image_tag "#{@movie.poster_url}", width: '300' %>
+  <h1><%= @movie.title %> </h1>
+  <h3>Rating: <%= @movie.rating %></h3>
+  <h3>Overview</h3>
+  <p>
+    <%= @movie.overview %>
+  </p>
+
+  <%= link_to 'Delete', movie_path(@movie), method: :delete, class: "btn btn-danger", id: "pinned-button-show" %>
+  <%= link_to 'Movie Index', movies_path, class: "btn btn-primary" %>
+</div>

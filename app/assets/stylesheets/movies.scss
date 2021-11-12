@@ -1,0 +1,53 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  background-color: #5c7cfa;
+  overflow-x: hidden;
+}
+
+.container-center {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container-movies {
+  width: 1200px;
+  margin: 10px 2px;
+  position: relative;
+}
+
+#pinned-button-index {
+    position: absolute;
+    top: 20px;
+    right: 200px;
+}
+
+#pinned-button-show {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+ul {
+  list-style-type: none;
+  a {
+    display: block;
+  }
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 0;
+  grid-gap: 0;
+  img {
+    padding: 0;
+    transition: transform 0.25s ease;
+  }
+  img:hover {
+    transform: scale(1.4);
+  }
+}
