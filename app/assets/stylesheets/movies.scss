@@ -1,7 +1,3 @@
-// Place all the styles related to the movies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 *{
 	list-style: none;
 	text-decoration: none;
@@ -22,10 +18,6 @@ body {
   margin: 0 auto;
 }
 
-.container-movies {
-  position: relative;
-}
-
 #pinned-button-show {
   position: absolute;
   top: 30px;
@@ -35,9 +27,8 @@ body {
 #pinned-button-index {
   position: absolute;
   top: 10px;
-  right: 4xpx;
+  right: 4px;
 }
-
 
 ul {
   list-style: none;
@@ -48,9 +39,22 @@ ul {
   margin: 0 100px;
 }
 
-.grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+.movie {
+  display: flex;
+  align-items: center;
+}
+
+.grid-titles {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   row-gap: 0;
   grid-gap: 0;
   img {
@@ -62,17 +66,32 @@ ul {
   }
 }
 
-.grid-titles {
-  position: relative;
-  width: 100%;
+@media(max-width: 1202px) {
+  .movies {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
-.sidebar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 325px;
-  height: 100%;
-  padding: 20px 0;
-  transition: all 0.5s ease;
+@media(max-width: 992px) {
+  .movies {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .movies {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 576px) {
+  .movies {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 560px) {
+  .movies {
+    grid-template-columns: 1fr;
+  }
 }

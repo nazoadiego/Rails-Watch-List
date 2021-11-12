@@ -1,18 +1,47 @@
 <div class="grid-container">
   <div class="grid-titles">
     <h1>Movies</h1>
-    <%= link_to 'New movie', new_movie_path, class: "btn btn-primary", id: "pinned-button-index" %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      New Movie
+    </button>
   </div>
   <div>
-    <ul class="grid">
+    <ul class="movies">
       <% 2.times do @movies.each do |movie| %>
         <li>
           <a href="<%= movie_path(movie) %>">
-            <%= image_tag "#{movie.poster_url}", height: '400', width: '260' %>
+            <div class="movie">
+              <%= image_tag "#{movie.poster_url}", height: '400', width: '260' %>
+            </div>
           </a>
         </li>
         <% end %>
       <% end %>
     </ul>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content dark_modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Create a new movie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@movie) do |f| %>
+          <%= f.input :title %>
+          <%= f.input :overview %>
+          <%= f.input :poster_url %>
+          <%= f.input :rating %>
+      </div>
+      <div class="modal-footer">
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
