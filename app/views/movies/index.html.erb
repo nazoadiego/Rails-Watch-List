@@ -1,0 +1,17 @@
+<h1 style='margin: 15px 55px;'>Movies</h1>
+
+<div>
+  <%= link_to 'New movie', new_movie_path, class: "btn btn-primary", id: "pinned-button-index" %>
+<div class="container-movies">
+  <ul class="grid">
+    <% @movies.each do |movie| %>
+      <li>
+        <a href="<%= movie_path(movie) %>">
+          <%= image_tag "#{movie.poster_url}", height: '400', width: '260' %>
+        </a>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+</div>
